@@ -1,2 +1,7 @@
-data*
+data/*nc
 texture*
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+.DS_Store
+*/.DS_Store/*
+*.tif
