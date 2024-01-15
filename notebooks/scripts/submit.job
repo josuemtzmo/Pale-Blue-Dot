@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#PBS -q sequentiel
+#PBS -l ncpus=1
+#PBS -l walltime=10:00:00
+#PBS -l mem=50gb
+
+# Handleler of parallel computation.
+# Using PBS
+
+cd /home1/datahome/jmartine/github/Pale-Blue-Dot/notebooks/scripts
+
+# Run in parallel the computation
+
+julia compute_wet_bulb.jl
+
+~
