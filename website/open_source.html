@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wet Bulb Temperature</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="public/css/style.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="shortcut icon" type="image/x-icon" href="./resources/earth_melt.ico" />
+</head>
+<body class="w3-light-grey" data-gr-c-s-loaded="true">
+
+
+    <div class="w3-main">
+        <header class="w3-container w3-top w3-xlarge w3-padding-16 header" style="z-index:5">
+            <a href="index.html" class="w3-left w3-large">
+                <img src="./resources/earth_melt.svg" class="w3-left w3-round w3-image" alt="Wet-Bulb" width="40" height="40">
+                <h1 class="title w3-display-topleft w3-padding-large w3-xlarge w3-text-black">Wet-Bulb</h1>
+            </a>
+            
+            <div class="w3-center">
+                <div class="w3-hide-small w3-text-black" style="height:100%;width:80vw; position:relative;display: inline">
+                    <a href="about.html" class="w3-button w3-large" style="height:100%;">About</a> 
+                    <a href="open_source.html" class="w3-button w3-large">Open Source</a> 
+                    <a href="credits.html" class="w3-button w3-large">Credits</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="w3-padding-64"></div>
+
+        <div class="w3-content w3-container w3-padding-64" >
+
+            <div class="w3-content w3-container">
+                <p style="text-align:justify; font-size: 17px;">
+                    The visualisation uses and CMIP6 climate data sourced from: 
+                </p>
+                <ul>
+                    <li>
+                        Population of the World: <a href="https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-count-rev11/data-download">Population Count, v4.11</a>
+                    </li>
+                    <li>
+                        CMIP6 Climate: <a href="https://www.nccs.nasa.gov/services/data-collections/land-based-products/nex-gddp-cmip6"> NASA Earth Exchange Global Daily Downscaled Projections (NEX-GDDP-CMIP6) </a>
+                    </li>
+                </ul>
+                <p style="text-align:justify; font-size: 17px;">
+                    The 2020 population is used for the visualisation.
+                    The CMIP6 climate datasets provide historical and future predictions of the climate earth system. Out of all the models provided, we use the model <code>ACCESS-CM2</code>.
+                    This dataset can be downloaded using the script provided in the following <a href="https://github.com/josuemtzmo/Pale-Blue-Dot/blob/main/data/get_data.sh">link</a>. The variables used for the visualization are Near-Surface Specific Humidity (huss) and Daily Near-Surface Air Temperature (tas). We converted Specific Humidity into Relative Humidity, to then compute the dew point and the Wet-Bulb temperature using the <a href="https://julialang.org"><code>Julia</code></a> open source package <a href="https://github.com/termolivre/Psychro.jl"><code>Psychro</code></a>. 
+                </p>
+                
+                <p style="text-align:justify; font-size: 17px;">
+                    After downloading the data the post-processing was done with <a href="https://julialang.org"><code>Julia</code></a> and <a href="https://www.python.org"><code>Python</code></a>. We use in Python several scientific libraries like <code>Numpy</code>, <code>Xarray</code>, <code>cmocean</code>, and <code>Matplotlib</code>, and in <code>Julia</code> packages such as <code>Psychro</code> and <code>NCDatasets</code>. The code to reproduce all the post-processing is available in the github repository <a href="https://github.com/josuemtzmo/Pale-Blue-Dot/">Pale-Blue-Dot</a>. Finally, the pre-processed data was used to create textures that we then used in <a href="https://www.blender.org"><code>Blender</code></a> to create the visualisation and animation. The <code>.blender</code> files are also available in the github repository.    
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

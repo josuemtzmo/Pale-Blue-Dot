@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wet Bulb Temperature</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="public/css/style.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="shortcut icon" type="image/x-icon" href="./resources/earth_melt.ico" />
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body class="w3-light-grey" data-gr-c-s-loaded="true">
+
+
+    <div class="w3-main">
+        <header class="w3-container w3-top w3-xlarge w3-padding-16 header" style="z-index:5">
+            <a href="index.html" class="w3-left w3-large">
+                <img src="./resources/earth_melt.svg" class="w3-left w3-round w3-image" alt="Wet-Bulb" width="40" height="40">
+                <h1 class="title w3-display-topleft w3-padding-large w3-xlarge w3-text-black">Wet-Bulb</h1>
+            </a>
+            
+            <div class="w3-center">
+                <div class="w3-hide-small w3-text-black" style="height:100%;width:80vw; position:relative;display: inline">
+                    <a href="about.html" class="w3-button w3-large" style="height:100%;">About</a> 
+                    <a href="open_source.html" class="w3-button w3-large">Open Source</a> 
+                    <a href="credits.html" class="w3-button w3-large">Credits</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="w3-padding-32"></div>
+
+        <div class="w3-content w3-container w3-padding-64" >
+
+            <div class="w3-content w3-container">
+                <p style="text-align:justify; font-size: 17px;">
+
+                The wet bulb temperature (WBT) accounts the dry air temperature and humidity, providing an estimate of the heat stress on humans. The WBT is generally lower than the dry air temperature. As the humidity increases, the WBT will approximate the dry air temperature. This quantity is crucial, since as the air becomes saturated with water (high humidity), less evaporation will occur. In other words, the thermoregulation of the human body temperature through evapotranspiration could increase the risk of heat stroke and hyperthermia. This visualisation explore the evolution of wet bulb temperature under "business as usual" emissions (RCP 8.5), with a particular focus on the alarming threshold of 35°C at which humans experience hyperthermia, an imminent risk to human health and large centers of population. For example, Sherwood & Huber (2010) reports that an increase of the WBT of 11-12°C would cover the majority of the human population as currently distributed.
+                </p>
+
+                <p style="text-align:justify; font-size: 17px;">
+                The Wet bulb formula was computed using the julia package <code>Psychro</code> that follows the definition proposed by Davies-Jones (2008), where:
+                </p>
+                <div id="formula">
+                    \[ T_w( T_d, RH,P) \]
+                </div>
+                <p style="text-align:justify; font-size: 17px;">
+                where <span>\( T_w \)</span> is the wet-bulb temperature in degrees Celsius, <span>\( T \)</span> is the dry air temperature in degrees Celsius, <span>\( RH \)</span> is the relative humidity, and <span>\( P \)</span> is the pressure. 
+                For simplicity, we define a constant <span>\( P = 101325.0 Pa \)</span>
+                </p>
+
+                <h2>Risk</h2>
+                <p style="text-align:justify; font-size: 17px;">
+                
+
+                A "critical" WBT for humans, the temperature at which a healthy person could survive for only six hours is usually considered to be 35°C. Under the current climate scenario, by the end of the century there will some regions that during the northern hemisphere summer will surpass consistently this 35°C threshold. 
+                
+                <div class="w3-display-container  w3-padding-16">
+                    <img src="./resources/WB_temp_bands_threshold.png" class="w3-image" alt="Wet-Bulb">
+                </div>
+
+                Furthermore, we observe that the yearly maximum monthly averaged wet-bulb temperature will increase significantly in the tropics, where many regions will experience average summers near the temperature limit.
+
+                <div class="w3-display-container  w3-padding-16">
+                    <img src="./resources/max_Risk_wet_bulb_maps.png" class="w3-image" alt="Wet-Bulb">
+                </div>
+
+                White areas indicating wet bulb temperatures below 25°C are likely to not represent risk to human health. Moderate risk zones appear between 25°C - 30°C, that extend in much of the tropical areas. Finally, High-Risk Zones correspond to monthly mean wet bulb temperature above 30°C, where inhabitants in these areas face an abrupt risk of heat-related illnesses. 
+                Note that a month that has an averaged wet-bulb temperature above 30°C, means that the temperature during several days of those months will be above 35°C.
+
+                The surface area covered by regions with temperatures above 30°C is shown below. The surface area starts to increase significantly after the mid century (2050). In summer, the maxima area coverage is 1 million \(km^2\) approximately the area surface of Egypt.
+
+                <div class="w3-display-container w3-padding-16">
+                    <img src="./resources/area_with_dangerous_WBtemp_80p.png" class="w3-image" alt="Wet-Bulb">
+                </div>
+
+                </p>
+
+                <h2>Conclusion</h2>
+                <p style="text-align:justify; font-size: 17px;">
+                As the wet bulb temperature exceeds 35°C, it requires immediate attention from the general population, governments, communities, and individuals to implement adaptive strategies, such as cooling infrastructure, public awareness campaigns, and emergency response plans. Through this visualisation, we gain insight into the escalating risk posed by wet bulb temperatures exceeding 35°C, compelling us to prioritize climate resilience and safeguard the well-being of communities worldwide.
+                </p>
+
+                <h2>References</h2>
+                <ul>
+                    <li>
+                        Sherwood, S. C. & Huber, M. An adaptability limit to climate change due to heat stress. Proc. Natl. Acad. Sci. 107, 9552-9555 (2010).
+                    </li>
+                    <li>
+                        Davies-Jones, R. An Efficient and Accurate Method for Computing the Wet-Bulb Temperature along Pseudoadiabats. Mon. Weather Rev. 136, 2764–2785 (2008).
+                    </li>
+
+                </ul>
+        </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
